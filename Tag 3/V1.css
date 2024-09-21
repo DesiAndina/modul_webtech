@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 490px;
+    /* 7 Boxen x 70px Breite */
+    height: 770px;
+    /* 11 Boxen x 70px Höhe */
+}
+
+.box {
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    /* Stellt sicher, dass die Größe 70x70 inklusive der Ränder ist */
+}
+
+.box7 {
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    transform-origin: right top; 
+    writing-mode: vertical-rl; 
+    white-space: nowrap; 
+    padding-top: 10px;
+
+  }
+
+
+.box10,
+.box11,
+.box12,
+.box13 {
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 47.5px;
+    
+}
+
+.box44 {
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 47px;
+    transform: rotate(-90deg);
+    border-top: 17px solid #e5231f;
+}
+    
+
+.box16,
+.box23,
+.box30,
+.box37,
+.box51,
+.box58,
+.box65, 
+.box72
+{
+    border-left: 17px solid #e5231f;
+}
+
+
+
+.box32
+{
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    transform: translate(35px, 15px); /* 35px nach rechts, 15px nach unten */
+
+}
+  
+
+.box39
+
+{
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    justify-self: start flex-end; /* Text wird rechtsbündig ausgerichtet */
+    text-align: right; /* Text wird rechtsbündig ausgerichtet */
+    font-weight: 700;
+    font-style: normal;
+    font-size: 28px;
+    transform: translate(-5px, -10px); /* 5px nach links, 10px nach oben */
+    
+
+}
+
+
+.box8,
+.box9,
+.box10,
+.box11,
+.box12,
+.box13 {
+    border-top: 17px solid #e5231f;
+}
+
+
+
+.box56,
+.box63 {
+    border-right: 13px solid #000000;
+}
+
+.box55 {
+    display: flex;
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 9px;
+    transform: translate(14px, 2px); /* 13px nach rechts, 3px nach unten */
+
+}
