@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            align-self: center;
+        }
+
+        .child {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            mix-blend-mode: multiply;
+            font-size: 50rem;
+            font-weight: 900;
+        }
+
+        .magenta {
+            color: magenta;
+            transition: all 1s ease-in-out;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .blue {
+            color: blue;
+            transition: all 1s ease-in-out;
+        }
+
+        .transformed:hover .magenta {
+            transform: translateX(-200px);
+            rotate: 30deg;
+        
+        }
+
+        .transformed:hover .blue {
+            transform: translateX(200px);
+            rotate: 30deg;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transformed">
+        <div class="group">
+            <div class="child magenta">S</div>
+            <div class="child yellow">S</div>
+            <div class="child blue">S</div>
+        </div>
+    </div>
+</body>
+
+</html>
