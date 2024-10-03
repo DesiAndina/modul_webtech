@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 490px;
+    /* 7 Boxen x 70px Breite */
+    height: 770px;
+    /* 11 Boxen x 70px Höhe */
+}
+
+.box {
+    width: 70px;
+    height: 70px;
+    background-color: #e5448f9a;
+    border: 1px solid #7c8285de;
+    box-sizing: border-box;
+    /* Stellt sicher, dass die Größe 70x70 inklusive der Ränder ist */
+}
+
+.box10,
+.box11,
+.box12,
+.box13,
+.box16,
+.box23,
+.box30,
+.box37,
+.box44,
+.box32,
+.box33,
+.box39,
+.box40,
+.box55,
+.box56,
+.box62,
+.box63 {
+    width: 70px;
+    height: 70px;
+    background-color: #1d1d1d9a;
+    border: 1px solid #7c8285de;
+    box-sizing: border-box;
+    /* Stellt sicher, dass die Größe 70x70 inklusive der Ränder ist */
+}
+
+
+.box7,
+.box14,
+.box28,
+.box35,
+.box42,
+.box21 {
+    border-right: 17px solid rgba(0, 0, 0, 0.524);
+}
+
+
+.box8,
+.box9,
+.box10,
+.box11,
+.box12,
+.box13 {
+    border-top: 17px solid rgba(0, 0, 0, 0.524);
+}
+
+
+.box8,
+.box9,
+.box10,
+.box11,
+.box12,
+.box13 {
+    border-top: 17px solid rgba(0, 0, 0, 0.524);
+}
+
+
+.box56,
+.box63 {
+    border-right: 17px solid rgba(0, 0, 0, 0.524);
+}
+
+
+.box49 {
+    position: relative;
+}
+
+
+.box49::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    border-right: 16px solid rgba(0, 0, 0, 0.524);
+}
+
+.box31,
+.box38 {
+    width: 70px;
+    height: 70px;
+    background-color: #e5448f9a;
+    border-right: 17px solid #656b6dde;
+}

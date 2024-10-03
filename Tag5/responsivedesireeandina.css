@@ -1,0 +1,616 @@
+.grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+}
+
+/* Mobile ab 351px */
+
+@media only screen and (max-width: 429px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(50px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));/
+    }
+
+    /* rote Linie vertikal */
+    .item1a {
+        grid-row-start: 1;
+        grid-row-end: 25;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        border-left: 15px solid rgb(221, 1, 1);
+        transform: translateX(25px) translatey(35px);
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        padding-left: 20px;
+    }
+
+    /* typographische */
+    .item1b {
+        grid-row-start: 5;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg) translateX(10px);
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+    }
+
+    /* mitteilung */
+    .item2a {
+        grid-row-start: 1;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        transform: rotate(180deg) translateX(10px) translateY(-35px);
+    }
+
+
+    /* Namen und schwarzer Strich */
+    .item3 {
+        grid-row-start: 7;
+        grid-column-start: 5;
+        grid-row-end: 9;
+        grid-column-end: 6;
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.7rem;
+        text-align: right;
+        padding-left: 20px;
+        line-height: 1.16;
+    }
+
+    .item7 {
+
+        grid-row-start: 7;
+        grid-column-start: 4;
+        grid-row-end: 9;
+        grid-column-end: 6;
+        border-right: 8px solid rgb(0, 0, 0);
+        transform: translateX(20px);
+    }
+
+    /* zeitschrift... */
+
+    .item4 {
+        grid-row-start: 10;
+        grid-column-start: 2;
+        grid-row-end: 12;
+        grid-column-end: 6;
+        display: flex;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.65rem;
+        transform: translatex(20px);
+        margin-bottom: 20px;
+    }
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 2;
+        grid-column-start: 3;
+        grid-row-end: 3;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.7rem;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(90px)
+    }
+
+    /* roten Strichs zwischen den Elementen */
+    .item5 {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+    }
+
+    /* roten Strich */
+    .item5::after {
+        content: "";
+        position: absolute;
+        top: 65%;
+        left: 0;
+        width: 258px;
+        border-bottom: 15px solid rgb(221, 1, 1);
+        z-index: 1;
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 4;
+        grid-column-start: 4;
+        grid-row-end: 5;
+        grid-column-end: 6;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: flex-end;
+        text-align: end;
+        white-space: nowrap;
+        transform: translateY(10px);
+    }
+}
+
+
+
+/* Mobile ab 350px */
+
+@media only screen and (min-width: 430px) and (max-width: 584px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(70px, 1fr));
+        grid-template-rows: repeat(13, minmax(70px, 1fr));/
+    }
+
+    /* roter Strich vertikal */
+    .item1a {
+        grid-row-start: 2;
+        grid-row-end: 25;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        border-left: 18px solid rgb(221, 1, 1);
+        transform: translateX(25px);
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        padding-left: 20px;
+    }
+
+    /* Typo */
+    .item1b {
+        grid-row-start: 5;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg) translateX(17px) translatey(-21px);
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        margin-top: 30px;
+    }
+
+    /* mitteilung */
+    .item2a {
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        transform: rotate(180deg) translateX(17px)translateY(2px);
+    }
+
+    /* Namen und schwarzer Strich */
+    .item3 {
+        grid-row-start: 8;
+        grid-column-start: 4;
+        grid-row-end: 10;
+        grid-column-end: 6;
+        display: flex;
+        transform: translateX(40px);
+        justify-content: flex-end;
+        white-space: nowrap;
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.7rem;
+        text-align: right;
+        padding-left: 20px;
+        line-height: 1.16;
+        transform: translateX(-15px);
+    }
+
+    .item7 {
+        grid-row-start: 8;
+        grid-row-end: 10;
+        grid-column-start: 6;
+        grid-column-end: 7;
+        border-right: 8px solid rgb(0, 0, 0);
+        transform: translateX(-14px);
+    }
+
+    /* zeitschrift... */
+
+    .item4 {
+        grid-row-start: 11;
+        grid-column-start: 1;
+        grid-row-end: 12;
+        grid-column-end: 6;
+        display: flex;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.65rem;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(30px) translateY(-20px);
+        padding-left: 50px;
+    }
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.7rem;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(80px)
+    }
+
+    /* roten Strichs zwischen den Elementen */
+    .item5 {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        position: relative;
+    }
+
+    /* roten Strich */
+    .item5::after {
+        content: "";
+        position: absolute;
+        top: 65%;
+        left: 0;
+        width: 380px;
+        border-bottom: 18px solid rgb(221, 1, 1);
+        z-index: 1;
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 4;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 5;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(95px)
+    }
+}
+
+
+/* Tablet */
+
+@media only screen and (min-width: 585px) and (max-width: 840px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));/
+    }
+
+    /* rote Linie vertikal */
+    .item1a {
+        grid-row-start: 4;
+        grid-row-end: span 17;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        border-left: 18px solid rgb(221, 1, 1);
+        transform: translateY(25px);
+    }
+
+    /* Typo */
+    .item1b {
+        grid-row-start: 4;
+        grid-row-end: 8;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.3rem;
+        transform: rotate(-90deg) translate(-416px, 30px);
+        transform-origin: left top;
+        text-align: end;
+    }
+
+    /* mitteilung */
+    .item2a {
+        grid-row-start: 3;
+        grid-column-start: 5;
+        grid-row-end: 4;
+        grid-column-end: 6;
+        font-size: 3.3rem;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        white-space: nowrap;
+        transform: translateY(-25px);
+        transform: translateX(1px)
+    }
+
+    /* rote Linie horizontal */
+    .item2b {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 6;
+        border-bottom: 18px solid rgb(221, 1, 1);
+        transform: translateX(1px)
+    }
+
+    /* Namen und schwarzer Strich */
+    .item3 {
+        grid-row-start: 10;
+        grid-column-start: 5;
+        grid-row-end: 11;
+        grid-column-end: 7;
+        display: flex;
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.747rem;
+        text-align: left;
+        text-align: start;
+        justify-self: start;
+        transform: translateX(30px);
+    }
+
+    .item7 {
+        grid-row-start: 10;
+        grid-row-end: 12;
+        grid-column-start: 6;
+        grid-column-end: 7;
+        border-right: 8px solid rgb(0, 0, 0);
+        transform: translateX(-px);
+    }
+
+    /* Text (zeitschrift des bildungsverbandes...) */
+    .item4 {
+        grid-row-start: 1;
+        grid-column-start: 7;
+        grid-row-end: 5;
+        grid-column-end: 8;
+        display: flex;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.9rem;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        align-items: flex-end;
+        transform: translateX(-15px);
+    }
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 6;
+        grid-column-start: 4;
+        grid-row-end: 7;
+        grid-column-end: 5;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.8rem;
+        text-align: end;
+        justify-self: end;
+        padding-left: 30px;
+        transform: translateX(30px);
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 7;
+        grid-column-start: 4;
+        grid-row-end: 8;
+        grid-column-end: 5;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.9rem;
+        text-align: end;
+        justify-self: end;
+        transform: translatey(-20px) translateX(30px);
+        padding-left: 30px;
+    }
+
+}
+
+
+
+
+/* Desktop */
+@media only screen and (min-width: 841px) {
+    .grid {
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr 1fr 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        min-height: 470px;
+    }
+
+    /* typografische */
+    .item1a {
+
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 11;
+        border-bottom: 23px solid rgb(221, 1, 1);
+        transform: translatey(20px);
+    }
+
+    .item1b {
+        grid-row-start: 2;
+        grid-column-start: 6;
+        grid-row-end: 3;
+        grid-column-end: 11;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem;
+        text-align: right;
+        transform: translateY(-10px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        white-space: nowrap;
+    }
+
+
+    /* mitteilung */
+    .item2a {
+        grid-row-start: 12;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        position: relative;
+        transform-origin: top right;
+        transform: rotate(-90deg);
+        left: -100px;
+        top: 423px;
+    }
+
+    .item2a {
+        font-size: 5rem !important;
+    }
+
+    .item2b {
+        grid-row-start: 4;
+        grid-column-start: 4;
+        grid-row-end: 12;
+        grid-column-end: 5;
+        border-left: 23px solid rgb(221, 1, 1);
+
+    }
+
+    /* Namen und schwarzer Strich */
+    .item3 {
+        grid-row-start: 5;
+        grid-column-start: 9;
+        grid-row-end: 7;
+        grid-column-end: 11;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        position: relative; 
+        white-space: nowrap;
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 0.8rem;
+        text-align: left;
+        padding-right: 20px;
+    }
+
+    /* schwarzer Strich */
+    .vertical-line {
+        width: 10px;
+        height: 143px;
+        background-color: black;
+        transform: translateY(-2px);
+    } 
+
+    /* zeitschrift des bildungsverbandes */
+    .item4 {
+        grid-row-start: 3;
+        grid-column-start: 4;
+        grid-row-end: 5;
+        grid-column-end: 11;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+        text-align: right;
+        transform: translateY(28px);
+    }
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 6;
+        grid-column-start: 6;
+        grid-row-end: 7;
+        grid-column-end: 8;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        min-height: 80px;
+        margin-bottom: 30px;
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 6;
+        grid-column-start: 6;
+        grid-row-end: 7;
+        grid-column-end: 8;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        transform: translatey(5px);
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}

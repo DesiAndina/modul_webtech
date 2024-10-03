@@ -1,0 +1,503 @@
+/*
+
+display: [grid]                          | set element to grid layout
+
+grid-template-rows: [100px 100px 100px]  | specify amount of grid rows (px, %, em, fr, ...)
+grid-template-column: [1fr 1fr 1fr]      | specify amount of grid columns (px, %, em, fr, ...)
+grid-template: [1fr 1fr / 1fr 1fr]       | shorthand form of grid-template-rows and grid-template-column
+
+grid-row-start: [1]                      | specify starting row of grid element 
+grid-column-start: [1]                   | specify starting column of grid element
+grid-row-end: [2]                        | specify end row of grid element, exclusive
+grid-column-end: [2]                     | specify end column of grid element, exclusive
+grid-area: [1 / 1 / 3 / 3]               | shorthand form for grid element positioning
+
+gap: [15px]                              | specify gap between grid elements
+
+Transform: translateY(-10px);              * Verschiebt den Text nach oben *
+justify-content: flex-end;                 * Text am rechten Rand ausrichten *
+align-items: center                        * Vertikal zentriert *
+*/
+
+
+
+
+.grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+}
+
+/* Mobile */
+
+
+@media only screen and (min-width: 200px) and (max-width: 559px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));/
+    }
+
+
+    /* Linie */
+    .item1a {
+        grid-row-start: 2;
+        grid-row-end: 20;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        border-left: 15px solid rgb(221, 1, 1);
+        transform: translateX(-50px);
+    
+    }
+
+    /* Typo */
+    .item1b {
+
+        grid-row-start: 9;
+        grid-row-end: 11;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.9rem;
+        transform: rotate(-90deg);
+
+      
+    }
+
+    /* mitteilung */
+    .item2a {
+
+        grid-row-start: 4;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.9rem;
+        transform: rotate(-90deg);
+      
+    }
+
+
+    /* Layout für die Namen und den Strich */
+    .item3 {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 10;
+        grid-column-end: 5;
+        display: flex;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(30px);
+
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8rem;
+        text-align: right;
+        padding-right: 20px;
+
+    }
+
+    /* Der schwarze Strich */
+    .vertical-line {
+        width: 7px;
+        height: 162px;
+        background-color: black;
+    }
+
+
+    .item4 {
+        grid-row-start: 11;
+        grid-column-start: 3;
+        grid-row-end: 12;
+        grid-column-end: 6;
+        display: flex;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.9rem;
+        display: flex;
+        display: flex;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(-70px);
+     
+    }
+
+
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(60px)
+
+    }
+
+
+/* roten Strichs zwischen den Elementen */
+.item5 {
+    grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+}
+
+/* roten Strich */
+.item5::after {
+    content: ""; /* Erzeugt ein leeres Pseudo-Element */
+    position: absolute; /* Positioniert das Pseudo-Element relativ zu .item5 */
+    top: 65%; /* Positioniert den Strich direkt unterhalb von .item5 */
+    left: 0; /* Positioniert den Strich am linken Rand */
+    width: 310px;
+    border-bottom: 17px solid rgb(221, 1, 1); /* Der rote Strich */
+    z-index: 1; 
+}
+
+
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 4;
+        grid-column-start: 2;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        display: flex;
+        align-items: end;
+        text-align: end;
+        justify-self: end;
+        transform: translateX(120px)
+
+    }
+
+}
+
+
+
+
+/* Tablet */
+
+@media only screen and (min-width: 560px) and (max-width: 770px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));/
+    }
+
+
+    /* Typografische Linie */
+    .item1a {
+        grid-row-start: 3;
+        grid-row-end: span 17;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        border-left: 20px solid rgb(221, 1, 1);
+        transform: translateY(25px);
+
+    }
+
+    /* Text neben der Linie */
+    .item1b {
+
+        grid-row-start: 3;
+        grid-row-end: 8;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        transform: rotate(-90deg) translate(-440px, 30px);
+        transform-origin: left top;
+        text-align: end;
+
+
+    }
+
+    /* mitteilung */
+    .item2a {
+
+        grid-row-start: 2;
+        grid-column-start: 4;
+        grid-row-end: 3;
+        grid-column-end: 6;
+        font-size: 3.5rem;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        white-space: nowrap;
+        transform: translateY(-25px);
+        transform: translateX(7px)
+    }
+
+    .item2b {
+
+        grid-row-start: 0;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 6;
+        border-bottom: 20px solid rgb(221, 1, 1);
+        transform: translateX(6px)
+    }
+
+    /* Layout für die Namen und den Strich */
+    .item3 {
+        grid-row-start: 4;
+        grid-column-start: 6;
+        grid-row-end: 11;
+        grid-column-end: 9;
+        display: flex;
+        align-items: flex-end;
+
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 0.6rem;
+        text-align: left;
+        padding-right: 20px;
+
+    }
+
+    /* Der schwarze Strich */
+    .vertical-line {
+        width: 10px;
+        height: 120px;
+        background-color: black;
+    }
+
+
+    .item4 {
+        grid-row-start: 1;
+        grid-column-start: 7;
+        grid-row-end: 9;
+        grid-column-end: 8;
+        display: flex;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.9rem;
+        transform-origin: right top;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        position: relative;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        text-align: right;
+        white-space: nowrap;
+        transform: translateX(-12px);
+
+
+    }
+
+
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 6;
+        grid-column-start: 5;
+        grid-row-end: 7;
+        grid-column-end: 6;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        text-align: end;
+        justify-self: end;
+
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 7;
+        grid-column-start: 5;
+        grid-row-end: 8;
+        grid-column-end: 6;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: end;
+        justify-self: end;
+
+    }
+
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 771px) {
+    .grid {
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr 1fr 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+    /* typografische */
+    .item1a {
+
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 11;
+        border-bottom: 23px solid rgb(221, 1, 1);
+        transform: translatey(20px);
+    }
+
+    .item1b {
+        grid-row-start: 2;
+        grid-column-start: 6;
+        grid-row-end: 3;
+        grid-column-end: 11;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem;
+        text-align: right;
+        transform: translateY(-10px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* Vertikal zentriert */
+        text-align: right;
+        white-space: nowrap;
+    }
+
+
+    /* mitteilung */
+    .item2a {
+        grid-row-start: 12;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        position: relative;
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        transform: rotate(-90deg);
+        left: -100px;
+        top: 435px;
+    }
+
+    .item2a {
+        font-size: 5rem !important;
+    }
+
+    .item2b {
+        grid-row-start: 4;
+        grid-column-start: 4;
+        grid-row-end: 12;
+        grid-column-end: 5;
+        border-left: 23px solid rgb(221, 1, 1);
+
+    }
+
+
+
+    /* Layout für die Namen und den Strich */
+    .item3 {
+        grid-row-start: 5;
+        grid-column-start: 9;
+        grid-row-end: 7;
+        grid-column-end: 11;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        position: relative;
+
+    }
+
+    .name-list {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 0.8rem;
+        text-align: left;
+        padding-right: 20px;
+
+    }
+
+    /* Der schwarze Strich */
+    .vertical-line {
+        width: 13px;
+        height: 162px;
+        background-color: black;
+    }
+
+
+
+    /* kleiner text unterhalb typo */
+    .item4 {
+        grid-row-start: 3;
+        grid-column-start: 4;
+        grid-row-end: 5;
+        grid-column-end: 11;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+        text-align: right;
+        transform: translateY(28px);
+
+    }
+
+    /* sonderheft */
+    .item5 {
+        grid-row-start: 6;
+        grid-column-start: 6;
+        grid-row-end: 7;
+        grid-column-end: 8;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        min-height: 80px;
+        margin-bottom: 30px;
+
+    }
+
+    /* elementare typographie */
+    .item6 {
+        grid-row-start: 6;
+        grid-column-start: 6;
+        grid-row-end: 7;
+        grid-column-end: 8;
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+    }
+}
