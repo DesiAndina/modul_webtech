@@ -1,1 +1,1 @@
-https://desiandina.github.io/modul_webtech/responsiveanimiertdesireeandina.html
+https://desiandina.github.io/modul_webtech/Tag6/responsiveanimiertdesireeandina.html
