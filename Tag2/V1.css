@@ -10,7 +10,7 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 490px;
+    width: 500px;
     /* 7 Boxen x 70px Breite */
     height: 770px;
     /* 11 Boxen x 70px Höhe */
