@@ -3,14 +3,8 @@
     height: 100vh;
     display: grid;
 }
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 
-/* Mobile ab 351px */
-
-@media only screen and (max-width: 429px) {
+@media only screen and (max-width: 584px) {
     .grid {
         display: grid;
         grid-template-columns: repeat(6, minmax(50px, 1fr));
@@ -19,34 +13,31 @@ body {
 
     /* rote Linie vertikal */
     .item1a {
-        grid-row-start: 1;
+        grid-row-start: 2;
         grid-row-end: 25;
         grid-column-start: 1;
         grid-column-end: 2;
-        border-left: 15px solid rgb(221, 1, 1);
-        transform: translateX(25px) translatey(35px);
-        display: flex;
-        justify-content: flex-end;
+        border-left: 18px solid rgb(221, 1, 1);
         white-space: nowrap;
         padding-left: 20px;
         animation: drawLine3 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: translateX(20px) translateY(0); /* Kombiniere die Transformationen */
-}
-
-@keyframes drawLine3 {
-    0% {
-        transform: translateX(20px) translateY(100%); /* Anfangsposition */
+        transform: translateX(20px);
     }
 
-    100% {
-        transform: translateX(20px) translateY(0); /* Endposition */
+    @keyframes drawLine3 {
+        0% {
+            transform: translateX(20px) translateY(120%);
+        }
+
+        100% {
+            transform: translateX(20px) translateY(0%);
+        }
     }
-}
 
     /* typographische */
     .item1b {
         grid-row-start: 5;
-        grid-row-end: 9;
+        grid-row-end: 10;
         grid-column-start: 2;
         grid-column-end: 3;
         font-family: "nimbus-sans", sans-serif;
@@ -54,7 +45,7 @@ body {
         font-style: normal;
         font-size: 2.5rem;
         writing-mode: vertical-rl;
-        transform: rotate(180deg) translateX(10px);
+        transform: rotate(180deg) translateX(10px) translateY(-40px);
         writing-mode: vertical-rl;
         display: flex;
         justify-content: flex-end;
@@ -63,7 +54,7 @@ body {
 
     /* mitteilung */
     .item2a {
-        grid-row-start: 1;
+        grid-row-start: 2;
         grid-row-end: 6;
         grid-column-start: 2;
         grid-column-end: 3;
@@ -75,9 +66,8 @@ body {
         display: flex;
         justify-content: flex-end;
         white-space: nowrap;
-        transform: rotate(180deg) translateX(10px) translateY(-35px);
+        transform: rotate(180deg) translateX(10px);
     }
-
 
     /* Namen und schwarzer Strich */
     .item3 {
@@ -96,9 +86,9 @@ body {
         font-style: normal;
         font-size: 0.7rem;
         text-align: right;
-        padding-left: 20px;
+        padding-left: 1rem;
         line-height: 1.16;
-        transform: translateY(11px);
+        transform: translate(0px, 50px);
     }
 
     .item7 {
@@ -108,11 +98,10 @@ body {
         grid-row-end: 9;
         grid-column-end: 6;
         border-right: 8px solid rgb(0, 0, 0);
-        transform: translate(25px, 10px);
+        transform: translate(25px, 50px);
     }
 
     /* zeitschrift... */
-
     .item4 {
         grid-row-start: 10;
         grid-column-start: 2;
@@ -126,40 +115,41 @@ body {
         font-weight: 400;
         font-style: normal;
         font-size: 0.65rem;
-        transform: translatex(20px);
+        transform: translatex(24px);
         margin-bottom: 20px;
     }
 
-/* Sonderheft */
-.sonderheft-text-container {
-    grid-row-start: 3;
-    grid-column-start: 3;
-    grid-row-end: 4;
-    grid-column-end: 6;
-    position: relative;
-    overflow: hidden; /* Verhindert, dass der Text außerhalb des Containers sichtbar wird */
-}
-
-.sonderheft-text {
-    font-family: "nimbus-sans", sans-serif;
-    font-weight: 400;
-    font-size: 1.7rem;  
-    opacity: 0; /* Unsichtbar bis zur Animation */
-    transform: translate(0, 100%); /* Startposition von rechts und unten */
-    animation: riseUp 1.2s forwards;
-    animation-delay: 0.9s;
-}
-
-@keyframes riseUp {
-    0% {
-        transform: translate(20px, 100%); /* Start von unten und rechts verschoben */
-        opacity: 0; /* Noch unsichtbar */
+    /* Sonderheft */
+    .sonderheft-text-container {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 6;
+        position: relative;
+        overflow: hidden;
     }
-    100% {
-        transform: translate(20px, 50%); /* Endposition */
-        opacity: 1; /* Sichtbar */
+
+    .sonderheft-text {
+        font-family: "nimbus-sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translate(0, 100%);
+        animation: riseUp 1.2s forwards;
+        animation-delay: 0.9s;
     }
-}
+
+    @keyframes riseUp {
+        0% {
+            transform: translate(20px, 100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translate(20px, 40%);
+            opacity: 1;
+        }
+    }
 
     /* roten Strichs zwischen den Elementen */
     .item5 {
@@ -170,46 +160,40 @@ body {
         position: relative;
     }
 
-    /* roten Strich */
+    /* roten Strichs zwischen den Elementen */
     .item5::after {
         content: "";
         position: absolute;
         top: 65%;
         left: 0;
-        width: 240px;
+        width: 350px;
         border-bottom: 18px solid rgb(221, 1, 1);
         transform: translateX(20px);
         animation: drawLine1 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        z-index: 2; 
-        
+        z-index: 2;
     }
-    
 
     @keyframes drawLine1 {
         0% {
             left: 250%;
-           
+
         }
 
         100% {
             left: 0;
-            /* Endposition auf der linken Seite */
         }
     }
 
+    @keyframes drawLine1 {
+        0% {
+            left: 250%;
+        }
 
-
-@keyframes drawLine1 {
-    0% {
-        left: 250%;
-       
+        100% {
+            left: 0;
+        }
     }
 
-    100% {
-        left: 0;
-        /* Endposition auf der linken Seite */
-    }
-}
     /* elementare typographie */
     .item6 {
         grid-row-start: 4;
@@ -217,261 +201,35 @@ body {
         grid-row-end: 5;
         grid-column-end: 6;
         font-family: "nimbus-sans", sans-serif;
-        font-weight: 700;
-        font-size: 1.7rem;
+        font-weight: 600;
+        font-size: 1.5rem;
         display: flex;
         justify-content: flex-end;
         text-align: end;
         white-space: nowrap;
         transform: translateY(10px);
-        opacity: 0; /* Unsichtbar bis zur Animation */
+        opacity: 0;
         animation: slideDown 1.2s forwards;
-        animation-delay: 0.9s; /* Verzögerung, wenn nötig */
-        z-index: 1; 
+        animation-delay: 0.9s;
+        z-index: 1;
     }
-    
-    }
+
+}
 
 
 @keyframes slideDown {
     0% {
-        transform: translate(0, -60%); /* Start von oben */
-        opacity: 0; /* Unsichtbar */
-    }
-    100% {
-        transform: translate(0, 0); /* Endposition unten */
-        opacity: 1; /* Sichtbar */
-    }
-}
-
-
-
-/* Mobile ab 350px */
-
-@media only screen and (min-width: 430px) and (max-width: 584px) {
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(7, minmax(70px, 1fr));
-        grid-template-rows: repeat(13, minmax(70px, 1fr));
-    }
-
-
-    
-/* roter Strich vertikal */
-.item1a {
-    grid-row-start: 2;
-    grid-row-end: 25;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    position: relative; /* wichtig für das absolute Positionieren der Animation */
-    border-left: 18px solid rgb(221, 1, 1);
-    display: flex;
-    justify-content: flex-end;
-    white-space: nowrap;
-    padding-left: 20px;        
-    animation: drawLine3 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: translateX(20px) translateY(0); /* Kombiniere die Transformationen */
-}
-
-@keyframes drawLine3 {
-    0% {
-        transform: translateX(20px) translateY(100%); /* Anfangsposition */
+        transform: translate(0, -60%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(20px) translateY(0); /* Endposition */
+        transform: translate(0, 0);
+        opacity: 1;
     }
 }
 
 
-    /* Typo */
-    .item1b {
-        grid-row-start: 5;
-        grid-row-end: 11;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        font-family: "nimbus-sans", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 2.9rem;
-        writing-mode: vertical-rl;
-        margin-top: 30px;
-        transform: rotate(180deg) translateX(17px) translatey(-33px);
-        writing-mode: vertical-rl;
-        display: flex;
-        justify-content: flex-end;
-        white-space: nowrap;
-        
-    }
-
-    /* mitteilung */
-    .item2a {
-        grid-row-start: 2;
-        grid-row-end: 6;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        font-family: "nimbus-sans", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 2.9rem;
-        writing-mode: vertical-rl;
-        display: flex;
-        justify-content: flex-end;
-        white-space: nowrap;
-        transform: rotate(180deg) translateX(17px)translateY(2px);
-    }
-
-    /* Namen und schwarzer Strich */
-    .item3 {
-        grid-row-start: 8;
-        grid-column-start: 4;
-        grid-row-end: 10;
-        grid-column-end: 6;
-        display: flex;
-        justify-content: flex-end;
-        white-space: nowrap;
-    }
-
-    .name-list {
-        font-family: "nimbus-sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 0.8rem;
-        text-align: right;
-        padding-left: 20px;
-        line-height: 1.16;
-    }
-
-    .item7 {
-        grid-row-start: 8;
-        grid-row-end: 10;
-        grid-column-start: 6;
-        grid-column-end: 7;
-        border-right: 8px solid rgb(0, 0, 0);
-        transform: translateX(-35px);
-    }
-
-    /* zeitschrift... */
-
-    .item4 {
-        grid-row-start: 11;
-        grid-column-start: 1;
-        grid-row-end: 12;
-        grid-column-end: 6;
-        display: flex;
-        font-family: "nimbus-sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 0.75rem;
-        align-items: end;
-        text-align: end;
-        justify-self: end;
-        transform: translateX(35px) translateY(-20px);
-        padding-left: 50px;
-    }
-    
-    
-/* Sonderheft */
-.sonderheft-text-container {
-    grid-row-start: 3;
-    grid-column-start: 3;
-    grid-row-end: 4;
-    grid-column-end: 6;
-    position: relative;
-    overflow: hidden; /* Verhindert, dass der Text außerhalb des Containers sichtbar wird */
-}
-
-.sonderheft-text {
-    font-family: "nimbus-sans", sans-serif;
-    font-weight: 400;
-    font-size: 1.7rem;  
-    opacity: 0; /* Unsichtbar bis zur Animation */
-    transform: translate(20px, 100%); /* Startposition von rechts und unten */
-    animation: riseUp 1.2s forwards;
-    animation-delay: 0.9s;
-}
-
-@keyframes riseUp {
-    0% {
-        transform: translate(20px, 100%); /* Start von unten und rechts verschoben */
-        opacity: 0; /* Noch unsichtbar */
-    }
-    100% {
-        transform: translate(20px, 40%); /* Endposition */
-        opacity: 1; /* Sichtbar */
-    }
-}
-
-    /* roten Strichs zwischen den Elementen */
-    .item5 {
-        grid-row-start: 3;
-        grid-column-start: 3;
-        grid-row-end: 4;
-        grid-column-end: 4;
-        position: relative;
-    }
-
-    /* roten Strich */
-    .item5::after {
-        content: "";
-        position: absolute;
-        top: 65%;
-        left: 0;
-        width: 370px;
-        border-bottom: 18px solid rgb(221, 1, 1);
-        transform: translateX(20px);
-        animation: drawLine1 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        z-index: 2; 
-        
-    }
-    
-
-    @keyframes drawLine1 {
-        0% {
-            left: 250%;
-           
-        }
-
-        100% {
-            left: 0;
-            /* Endposition auf der linken Seite */
-        }
-    }
-
-
-
-    /* elementare typographie */
-    .item6 {
-        grid-row-start: 4;
-        grid-column-start: 4;
-        grid-row-end: 4;
-        grid-column-end: 6;
-        font-family: "nimbus-sans", sans-serif;
-        font-weight: 700;
-        font-size: 1.7rem;
-        display: flex;
-        align-items: end;
-        text-align: end;
-        justify-self: end;
-        opacity: 0; /* Unsichtbar bis zur Animation */
-        animation: slideDown 1.2s forwards;
-        animation-delay: 0.9s; /* Verzögerung, wenn nötig */
-        z-index: 1; 
-    }
-    
-    }
-
-
-@keyframes slideDown {
-    0% {
-        transform: translate(0, -60%); /* Start von oben */
-        opacity: 0; /* Unsichtbar */
-    }
-    100% {
-        transform: translate(0, -30%); /* Endposition unten */
-        opacity: 1; /* Sichtbar */
-    }
-}
 /* Tablet */
 
 @media only screen and (min-width: 585px) and (max-width: 840px) {
@@ -496,17 +254,15 @@ body {
     @keyframes drawLine3 {
         0% {
             transform: translateY(75%);
-            /* Startposition unter dem sichtbaren Bereich */
         }
 
         100% {
             transform: translateY(25px);
-            /* Endposition */
         }
     }
 
 
-    /* Typo */
+    /* typographische */
     .item1b {
         grid-row-start: 4;
         grid-row-end: 8;
@@ -548,23 +304,19 @@ body {
         border-bottom: 18px solid rgb(221, 1, 1);
         transform: translateX(1px);
         animation: drawLine 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        /* Cubic Bezier für sanftere Animation */
     }
 
     @keyframes drawLine {
         0% {
             border-bottom-width: 23px;
             border-bottom-color: rgba(221, 1, 1, 0);
-            /* Linie unsichtbar */
             width: 0;
         }
 
 
         100% {
             border-bottom-color: rgba(221, 1, 1, 1);
-            /* Linie sichtbar */
             width: 100%;
-            /* Linie vollständig gezeichnet */
         }
     }
 
@@ -576,7 +328,7 @@ body {
         grid-row-end: 12;
         grid-column-end: 7;
         display: flex;
-        overflow: hidden; 
+        overflow: hidden;
     }
 
     .name-list {
@@ -591,37 +343,33 @@ body {
         opacity: 0;
         animation: slide-in 1.5s cubic-bezier(0, 0, 0.5, 1) forwards;
         animation-delay: 0.8s;
-        
+
     }
 
-/* Keyframes für die Animation */
-@keyframes slide-in {
-    from {
-        transform: translateX(100%); /* Start von rechts */
-        opacity: 0; /* Zu Beginn unsichtbar */
+    @keyframes slide-in {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(30);
+            opacity: 1;
+        }
     }
-    to {
-        transform: translateX(30); /* Endposition */
-        opacity: 1; /* Sichtbar nach der Animation */
-    }
-}
 
 
-
-
-
+    /* schwarzer Strich */
     .item7 {
         grid-row-start: 10;
         grid-row-end: 12;
         grid-column-start: 6;
         grid-column-end: 7;
         border-right: 8px solid rgb(0, 0, 0);
-        
+
     }
 
-
-    
-    /* Text (zeitschrift des bildungsverbandes...) */
+    /* zeitschrift... */
     .item4 {
         grid-row-start: 1;
         grid-column-start: 7;
@@ -667,7 +415,6 @@ body {
         transform: translatey(-20px) translateX(30px);
         padding-left: 30px;
     }
-
 }
 
 
@@ -681,38 +428,30 @@ body {
         min-height: 490px;
     }
 
-    /* typografische */
+    /* rote Linie vertikal */
     .item1a {
-
         grid-row-start: 2;
         grid-column-start: 1;
         grid-row-end: 3;
         grid-column-end: 11;
         border-bottom: 23px solid rgb(221, 1, 1);
         z-index: 2;
-        /* Border ist im Vordergrund */
         transform: translatey(20px);
         animation: drawLine 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        /* Cubic Bezier für sanftere Animation */
     }
 
     @keyframes drawLine {
         0% {
             border-bottom-width: 23px;
             border-bottom-color: rgba(221, 1, 1, 0);
-            /* Linie unsichtbar */
             width: 0;
         }
 
-
         100% {
             border-bottom-color: rgba(221, 1, 1, 1);
-            /* Linie sichtbar */
             width: 100%;
-            /* Linie vollständig gezeichnet */
         }
     }
-
 
     /* zeitschrift des bildungsverbandes */
     .item4 {
@@ -727,33 +466,25 @@ body {
         text-align: right;
         transform: translateY(32px);
         z-index: 1;
-        /* Hinter dem roten Border */
         opacity: 0;
-        /* Unsichtbar zu Beginn */
         animation: revealText 1s ease-in-out forwards;
         animation-delay: 1s;
-        /* Startet nach der roten Linie */
     }
 
-    /* Keyframes für das Herunterkommen und Sichtbarwerden des Textes */
     @keyframes revealText {
         0% {
             transform: translateY(-10px);
-            /* Startpunkt außerhalb des Bildschirms (oben) */
             opacity: 0;
-            /* Unsichtbar */
 
         }
 
         100% {
             transform: translateY(32px);
-            /* Endposition im sichtbaren Bereich */
             opacity: 1;
-            /* Sichtbar */
-
         }
     }
 
+    /* typographische */
     .item1b {
         grid-row-start: 2;
         grid-column-start: 5;
@@ -788,10 +519,13 @@ body {
         top: 423px;
     }
 
+    /* mitteilung */
     .item2a {
         font-size: 5rem !important;
     }
 
+
+    /* rote Linie vertikal */
     .item2b {
         grid-row-start: 4;
         grid-column-start: 4;
@@ -801,6 +535,7 @@ body {
         overflow: hidden;
     }
 
+    /* rote Linie vertikal */
     .item2b::before {
         content: '';
         position: absolute;
@@ -815,12 +550,10 @@ body {
     @keyframes drawLine2 {
         0% {
             height: 0;
-            /* Höhe startet bei 0 */
         }
 
         100% {
             height: 100%;
-            /* Höhe erreicht 100% */
         }
     }
 
