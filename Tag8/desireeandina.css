@@ -80,7 +80,7 @@
         align-items: flex-end;
         position: relative;
         white-space: nowrap;
-        transform: translatey(30px) translatex(30px);
+        transform: translatey(55px) translatex(30px);
     }
 
     .name-list {
@@ -365,6 +365,7 @@
         grid-column-start: 6;
         grid-column-end: 7;
         border-right: 8px solid rgb(0, 0, 0);
+        transform: translatex(20px);
 
     }
 
@@ -382,7 +383,7 @@
         writing-mode: vertical-rl;
         white-space: nowrap;
         align-items: flex-end;
-        transform: translate(-12px, 20px);
+        transform: translate(8px, 20px);
     }
 
     /* sonderheft */
