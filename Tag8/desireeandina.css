@@ -80,7 +80,7 @@
         align-items: flex-end;
         position: relative;
         white-space: nowrap;
-        transform: translatey(55px) translatex(30px);
+        transform: translatey(30px) translatex(30px);
     }
 
     .name-list {
@@ -291,7 +291,7 @@
         text-align: right;
         white-space: nowrap;
         transform: translateY(-25px);
-        transform: translateX(1px)
+        transform: translateX(1px);
     }
 
     /* rote Linie horizontal */
@@ -587,8 +587,6 @@
         background-color: black;
         transform: translateY(-2px);
     }
-
-
 
 
     /* sonderheft */
