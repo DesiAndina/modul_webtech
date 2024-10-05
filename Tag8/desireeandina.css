@@ -80,7 +80,7 @@
         align-items: flex-end;
         position: relative;
         white-space: nowrap;
-        transform: translatey(30px) translatex(30px);
+        transform: translatey(40px) translatex(30px);
     }
 
     .name-list {
